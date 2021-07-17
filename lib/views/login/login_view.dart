@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import '../../providers/user_provider.dart';
 import '../../common_widgets/common_input_widget.dart';
 import '../../common_widgets/button_widget.dart';
 import '../../models/user_model.dart';
@@ -23,6 +25,8 @@ class _LoginViewState extends State<LoginView> {
     if (model.username!.isEmpty || model.password!.isEmpty) return;
     // TODO login service call
     print('Login request sent');
+    // provider mock test
+    Provider.of<UserProvider>(context, listen: false).updateUserInfo();
   }
 
   @override
